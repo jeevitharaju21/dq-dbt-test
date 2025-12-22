@@ -5,6 +5,12 @@ Welcome to your new dbt project!
 Try running the following commands:
 - dbt run
 - dbt test
+- dbt run --models dq --vars '{"etl_nr": 20250916001}'
+- dbt run --models staging
+- dbt run --models integration
+- dbt run --models load
+- dbt run --models dq_sales_consistency_header
+- dbt run --models dq_sales_consistency_detail
 
 
 ### Resources:
