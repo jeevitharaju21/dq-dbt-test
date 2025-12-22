@@ -38,10 +38,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dq_dbt_test:
     staging:
+      +schema: STG
       materialized: incremental
     integration:
+      +schema: STG
       materialized: table
-    marts:
+    tgt:
+      +schema: STG
       materialized: incremental
     dq:
+      +schema: STG
       materialized: incremental
