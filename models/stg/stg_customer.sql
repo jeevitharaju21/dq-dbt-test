@@ -1,5 +1,6 @@
 {{ config(materialized='incremental', unique_key='customer_id') }}
 
+
 select
 customer_id,
 customer_name,
