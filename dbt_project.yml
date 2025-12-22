@@ -40,7 +40,7 @@ models:
     staging:
       +schema: DBT_POC
       materialized: incremental
-    integration:
+    int:
       +schema: DBT_POC
       materialized: table
     tgt:
