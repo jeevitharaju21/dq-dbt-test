@@ -9,8 +9,7 @@ quantity,
 unit_price,
 amount,
 updated_ts
-from {{ source('raw','order_item') }}
-
+from DBT_POC.RAW_order_item_SRC
 
 {% if is_incremental() %}
 where updated_ts > (select max(updated_ts) from {{ this }})

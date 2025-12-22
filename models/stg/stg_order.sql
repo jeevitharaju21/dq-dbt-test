@@ -9,7 +9,7 @@ order_status,
 channel,
 created_ts,
 updated_ts
-from {{ source('raw','order') }}
+from DBT_POC.RAW_ORDER_SRC
 
 
 {% if is_incremental() %}
