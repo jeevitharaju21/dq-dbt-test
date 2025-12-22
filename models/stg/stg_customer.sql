@@ -9,7 +9,7 @@ country_code,
 customer_status,
 created_ts,
 updated_ts
-from {{ source('raw','customer') }}
+from DBT_POC.RAW_CUSTOMER_SRC
 
 
 {% if is_incremental() %}
