@@ -2,9 +2,8 @@
   config(
     materialized = 'incremental',     -- Append new failure rows per run
     unique_key   = 'dq_detail_sk'     -- Ensure uniqueness per failed record
-  ) 
+  )
 }}
-
 -- ==========================================================
 -- Step 1: Calculate SOURCE aggregate values
 -- ==========================================================
@@ -98,4 +97,4 @@ where s.src_total_amount <> t.tgt_total_amount
 and {{ var('etl_nr') }} not in (
     select etl_nr from {{ this }}
 )
-{% endif %}
+{% endif %}  

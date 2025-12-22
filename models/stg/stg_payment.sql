@@ -1,6 +1,5 @@
 {{ config(materialized='incremental', unique_key='payment_id') }}
 
-
 select
 payment_id,
 order_id,

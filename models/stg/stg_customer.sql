@@ -1,6 +1,5 @@
 {{ config(materialized='incremental', unique_key='customer_id') }}
 
-
 select
 customer_id,
 customer_name,
@@ -9,7 +8,7 @@ country_code,
 customer_status,
 created_ts,
 updated_ts
-from DBT_POC.RAW_CUSTOMER_SRC
+from dbt_pOC.RAW_CUSTOMER_SRC
 
 
 {% if is_incremental() %}
