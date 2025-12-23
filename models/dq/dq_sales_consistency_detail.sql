@@ -42,7 +42,6 @@ mismatched_records as (
 )
 
 select
-    -- FIX: Removed current_timestamp to make the key deterministic per batch
     hash({{ dbt_utils.generate_surrogate_key(['order_id', var('etl_nr', 0)]) }}) as dq_detail_sk,
     dq_header_sk,
     current_date as controlm_o_dt,
