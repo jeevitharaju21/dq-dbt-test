@@ -1,0 +1,7 @@
+
+# START DQ MFP load for SNF FORM CRF FC AML ALERT
+
+jb9abc1100001_Consistency_Source_Fct_Order_Analytics
+jb9abc1100002_Consistency_Target_fct_order_analytics
+
+# End of DQ fct_order_analytics###########

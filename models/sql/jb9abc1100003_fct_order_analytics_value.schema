@@ -1,0 +1,23 @@
+record
+
+(final delim-end, delim string'', quote none, null fields"}
+    CUSTOMER_ID:NUMBER(19);
+    CUSTOMER_NAME:string[se];
+    COUNTRY_CODE:string[se];
+    ORDER_DATE DATE;
+    ORDER_CREATED_TS: timestamp[microseconds];
+    PAYMENT_TS : timestamp[microseconds];
+    PAY_LATENCY_MINUTES:NUMBER(18);
+    PROCESSING_DAYS:NUMBER(18);
+    QUANTITY:NUMBER(10);
+    UNIT_PRICE:NUMBER(10);
+    LINE_ITEM_AMOUNT:NUMBER(12);
+    TAX_AMOUNT:NUMBER(12);          
+    GROSS_AMOUNT:NUMBER(14);
+    ORDER_STATUS:string[se];
+    CHANNEL :string[se];
+    PAYMENT_MODE:string[se];
+    PAYMENT_STATUS :string[se];
+    ORDER_VALUE_SEGMENT:string[se]; 
+    REVENUE_IMPACT_STATUS:string[se];
+)

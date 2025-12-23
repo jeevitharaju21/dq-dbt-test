@@ -1,0 +1,6 @@
+##########start load for fct_order_analytics#############
+[jb9abc1100001]
+jobname=jb9abc1100001
+psqlfile=jb9abc1100001_Consistency_Source_Fct_Order_Analytics.sql
+psource=usaa_csa
+#########end dq load####################################

@@ -1,0 +1,8 @@
+record
+
+(final delim-end, delim string'', quote none, null fields"}
+
+ORDER_ID: NUMBER(19);
+
+PRODUCT_CODE: STRING[se];
+)
