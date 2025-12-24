@@ -3,5 +3,6 @@
 
 jb9abc1100001_Consistency_Source_Fct_Order_Analytics
 jb9abc1100002_Consistency_Target_fct_order_analytics
-
+jb9abc1100004_dq_order_consistency_header
+jb9abc1100005_dq_order_consistency_detail
 # End of DQ fct_order_analytics###########
