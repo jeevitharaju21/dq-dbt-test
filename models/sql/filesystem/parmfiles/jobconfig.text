@@ -1,8 +1,7 @@
+# START FCT_ORDER_ANALYTICS ###########
 
-# START DQ MFP load for SNF FORM CRF FC AML ALERT
+AML-jb9abc1100001-seq_Reusable_SourcePrep_SP_AF_DS.jb9abc1100001_Source_Consistency_Extact_from_FCT_ORDER_ANALYTICS-blamlaep-N-N-N-N-N
+AML-jb9abc1100002-seq_Reusable_SourcePrep_SP_AF_DS.jb9abc1100001_Target_Consistency_Extact_from_FCT_ORDER_ANALYTICS-blamlaep-N-N-N-N-N
+AML-jb9abc1100000-05-seq_consistency_MFP17133-FCT_ORDER_ANALYTICS/story-bamiap-N-N-N-N-N
 
-jb9abc1100001_Consistency_Source_Fct_Order_Analytics
-jb9abc1100002_Consistency_Target_fct_order_analytics
-jb9abc1100004_dq_order_consistency_header
-jb9abc1100005_dq_order_consistency_detail
-# End of DQ fct_order_analytics###########
+# End of DQ fct_order_analytics ###########
