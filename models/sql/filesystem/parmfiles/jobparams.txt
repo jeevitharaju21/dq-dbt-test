@@ -3,4 +3,10 @@
 jobname=jb9abc1100001
 psqlfile=jb9abc1100001_Consistency_Source_Fct_Order_Analytics.sql
 psource=usaa_csa
+#########end load####################################
+##########start dq load for fct_order_analytics#############
+[jb9abc1100004]
+jobname=jb9abc1100001
+psqlfile=jb9abc1100004_dq_order_consistency_header.sql
+psource=usaa_csa
 #########end dq load####################################
