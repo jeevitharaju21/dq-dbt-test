@@ -17,7 +17,8 @@ with failures as (
 
 final_summary as (
     select
-        HASH({{ dbt_utils.generate_surrogate_key([var('etl_nr', 0), "'FCT_ORDER_ANALYTICS'"]) }}) as dq_header_sk,
+        HASH({{ dbt_utils.generate_surrogate_key([var('etl_nr', current_timestamp
+        ), "'FCT_ORDER_ANALYTICS'"]) }}) as dq_header_sk,
         'FCT_ORDER_ANALYTICS' as target_table_nm,
         'GROSS_AMOUNT_INTEGRITY_CHECK' as dq_type_dc,
         current_date as controlm_o_dt,
@@ -27,7 +28,7 @@ final_summary as (
         end as status_cd,
         count(*) as failed_cnt,
         (select count(*) from {{ ref('fct_order_analytics') }}) as total_cnt,
-        {{ var('etl_nr', 0) }} as etl_nr,
+        {{ var('etl_nr', current_timestamp) }} as etl_nr,
         current_timestamp as etl_recorded_gmts,
         'FCT_ORDER_ANALYTICS' as source_table_nm
     from failures

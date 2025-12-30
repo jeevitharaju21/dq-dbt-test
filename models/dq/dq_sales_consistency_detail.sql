@@ -9,7 +9,7 @@ with source_aggr as (
     select
         order_id,
         sum(amount) as src_total_amount
-    from {{ ref('stg_order_item') }}
+    from {{ ref('raw_order_item_src') }}
     group by order_id
 ),
 

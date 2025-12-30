@@ -1,3 +1,26 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='incremental',unique_key='FCT_ORDER_SK') }}
 
-select * from {{ ref('int_fct_order') }}
+select 
+ORDER_ID
+,CUSTOMER_ID
+,CUSTOMER_NAME
+,COUNTRY_CODE
+,ORDER_DATE
+,ORDER_CREATED_TS
+,PAYMENT_TS
+,PAY_LATENCY_MINUTES
+,PROCESSING_DAYS
+,PRODUCT_CODE
+,QUANTITY
+,UNIT_PRICE
+,LINE_ITEM_AMOUNT
+,TAX_AMOUNT
+,GROSS_AMOUNT
+,ORDER_STATUS
+,CHANNEL
+,PAYMENT_MODE
+,PAYMENT_STATUS
+,ORDER_VALUE_SEGMENT
+,REVENUE_IMPACT_STATUS
+,FCT_ORDER_SK
+ from {{ ref('int_fct_order') }}

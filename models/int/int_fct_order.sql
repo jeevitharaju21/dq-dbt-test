@@ -1,4 +1,4 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='table') }}
 
 SELECT 
     o.ORDER_ID,
@@ -15,7 +15,7 @@ SELECT
     oi.UNIT_PRICE,
     oi.AMOUNT AS LINE_ITEM_AMOUNT,
     ROUND(oi.AMOUNT * 0.10, 2) AS TAX_AMOUNT,
-    ROUND(oi.AMOUNT * 1.10, 2) AS GROSS_AMOUNT,
+    ROUND(oi.AMOUNT * 1.12, 2) AS GROSS_AMOUNT,
     o.ORDER_STATUS,
     o.CHANNEL,
     p.PAYMENT_MODE,
@@ -31,8 +31,8 @@ SELECT
         WHEN p.PAYMENT_STATUS = 'COMPLETED' THEN 'REVENUE_REALIZED'
         ELSE 'REVENUE_PENDING'
     END AS REVENUE_IMPACT_STATUS
-
-FROM {{ ref('stg_order') }} o
-JOIN {{ ref('stg_customer') }} c ON o.CUSTOMER_ID = c.CUSTOMER_ID
-JOIN {{ ref('stg_order_item') }} oi ON o.ORDER_ID = oi.ORDER_ID
-LEFT JOIN {{ ref('stg_payment') }} p ON o.ORDER_ID = p.ORDER_ID
+, CONCAT(o.order_id, oi.product_code) as fct_order_sk
+FROM {{ ref('raw_order_src') }} o
+JOIN {{ ref('raw_customer_src') }} c ON o.CUSTOMER_ID = c.CUSTOMER_ID
+JOIN {{ ref('raw_order_item_src') }} oi ON o.ORDER_ID = oi.ORDER_ID
+LEFT JOIN {{ ref('raw_payment_src') }} p ON o.ORDER_ID = p.ORDER_ID
