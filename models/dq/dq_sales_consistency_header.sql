@@ -8,7 +8,7 @@
 with failures as (
     select
         s.order_id
-    from {{ ref('stg_order_item') }} s
+    from {{ ref('raw_order_item_src') }} s
     join {{ ref('tgt_sales') }} t
       on s.order_id = t.order_id
     group by s.order_id
