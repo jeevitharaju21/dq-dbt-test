@@ -15,7 +15,12 @@ SELECT
     oi.UNIT_PRICE,
     oi.AMOUNT AS LINE_ITEM_AMOUNT,
     ROUND(oi.AMOUNT * 0.10, 2) AS TAX_AMOUNT,
-    ROUND(oi.AMOUNT * 1.12, 2) AS GROSS_AMOUNT,
+    ---failed scenario check-----------------
+    CASE 
+        WHEN c.COUNTRY_CODE = 'US' THEN ROUND(oi.AMOUNT * 1.15, 2) -- WRONG 
+        ELSE ROUND(oi.AMOUNT * 1.10, 2)                           -- CORRECT
+    END AS GROSS_AMOUNT,
+  --  ROUND(oi.AMOUNT * 1.12, 2) AS GROSS_AMOUNT,
     o.ORDER_STATUS,
     o.CHANNEL,
     p.PAYMENT_MODE,
